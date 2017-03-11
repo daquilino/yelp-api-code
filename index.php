@@ -38,7 +38,7 @@ $GRANT_TYPE = "client_credentials";
 $DEFAULT_TERM = "dinner";
 $DEFAULT_LOCATION = "San Francisco, CA";
 $SEARCH_LIMIT = 50;
-$SEARCH_SORT_BY = "rating";
+$SEARCH_SORT_BY = "review_count";
 
 /**
  * Given a bearer token, send a GET request to the API.
