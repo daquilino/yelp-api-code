@@ -1,4 +1,4 @@
-<!-- #!/usr/bin/php -->
+#!/usr/bin/php
 <?php
 
 /**
@@ -184,19 +184,29 @@ function query_api($term, $location) {
     $bearer_token = obtain_bearer_token();
 
     $response = json_decode(search($bearer_token, $term, $location));
-    $business_id = $response->businesses[0]->id;
     
-    print sprintf(
-        "%d businesses found, querying business info for the top result \"%s\"\n\n",         
-        count($response->businesses),
-        $business_id
-    );
+
+    //CODE I ADDED 
+    print "$response\n"
+    return $response;
+    //END CODE I ADDED
     
-    $response = get_business($bearer_token, $business_id);
+
+
+    // COMMENTED OUT
+    // $business_id = $response->businesses[0]->id;
     
-    print sprintf("Result for business \"%s\" found:\n", $business_id);
-    $pretty_response = json_encode(json_decode($response), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-    print "$pretty_response\n";
+    // print sprintf(
+    //     "%d businesses found, querying business info for the top result \"%s\"\n\n",         
+    //     count($response->businesses),
+    //     $business_id
+    // );
+    
+    // $response = get_business($bearer_token, $business_id);
+    
+    // print sprintf("Result for business \"%s\" found:\n", $business_id);
+    // $pretty_response = json_encode(json_decode($response), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    // print "$pretty_response\n";
 }
 
 /**
