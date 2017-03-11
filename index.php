@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 
 /**
@@ -18,8 +19,8 @@
 // OAuth credential placeholders that must be filled in by users.
 // You can find them on
 // https://www.yelp.com/developers/v3/manage_app
-$CLIENT_ID = "02kOu2OwxMITPAa8zCcpew";
-$CLIENT_SECRET = "o3kj1PsldmHbv4533nqFgip3b1nL0ZcF11H8EexmFnrchwssjZExI2Fi5yzOHyok";
+$CLIENT_ID = "mEbfEMyYnU1EgNm2o3TOiw";
+$CLIENT_SECRET = "ZIfhF7t2INthL9ut5BBvMWG4QgZeRNyWepOUDf96g9MXZzpZdfeUcSkBN5f4ZDn8";
 
 // Complain if credentials haven't been filled out.
 assert($CLIENT_ID, "Please supply your client_id.");
@@ -208,9 +209,10 @@ $longopts  = array(
     
 //$options = getopt("", $longopts);
 
-$term = $_GET['term'];
-$location = $_GET['location'];
-
+$term = $_GET['term'] ?: $GLOBALS['DEFAULT_TERM'];
+$location = $_GET['location'] ?: $GLOBALS['DEFAULT_LOCATION'];
+echo $_GET['term'] . "\n";
+echo $_GET['location'] . "\n";
 query_api($term, $location);
 
 ?>
