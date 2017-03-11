@@ -187,7 +187,9 @@ function query_api($term, $location) {
     
 
     //CODE I ADDED 
-    echo "$response\n"
+    $pretty_response = json_encode(json_decode($response), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    print "$pretty_response\n";
+    //echo "$response\n";
     //return $response;
     //END CODE I ADDED
     
