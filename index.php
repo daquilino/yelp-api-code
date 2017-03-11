@@ -159,7 +159,7 @@ function search($bearer_token, $term, $location) {
     $url_params['term'] = $term;
     $url_params['location'] = $location;
     $url_params['limit'] = $GLOBALS['SEARCH_LIMIT'];
-    $url_params['sort_by'] = $GLOBALS['SORT_BY'];
+    $url_params['sort_by'] = $GLOBALS['SEARCH_SORT_BY'];
     
     return request($bearer_token, $GLOBALS['API_HOST'], $GLOBALS['SEARCH_PATH'], $url_params);
 }
