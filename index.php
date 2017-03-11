@@ -188,7 +188,7 @@ function query_api($term, $location) {
 
     //CODE I ADDED 
     print "$response\n"
-    return $response;
+    //return $response;
     //END CODE I ADDED
     
 
