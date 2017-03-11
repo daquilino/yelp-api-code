@@ -37,7 +37,7 @@ $GRANT_TYPE = "client_credentials";
 // Defaults for our simple example.
 $DEFAULT_TERM = "dinner";
 $DEFAULT_LOCATION = "San Francisco, CA";
-$SEARCH_LIMIT = 3;
+$SEARCH_LIMIT = 100;
 
 /**
  * Given a bearer token, send a GET request to the API.
@@ -190,10 +190,7 @@ function query_api($term, $location) {
     //CODE I ADDED 
     $pretty_response = json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     print "$pretty_response\n";
-    //echo "$response\n";
-    //return $response;
-    //END CODE I ADDED
-    
+   
 
 
     // COMMENTED OUT
