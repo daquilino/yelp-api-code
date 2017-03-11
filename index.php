@@ -37,7 +37,7 @@ $GRANT_TYPE = "client_credentials";
 // Defaults for our simple example.
 $DEFAULT_TERM = "dinner";
 $DEFAULT_LOCATION = "San Francisco, CA";
-$SEARCH_LIMIT = 100;
+$SEARCH_LIMIT = 20;
 
 /**
  * Given a bearer token, send a GET request to the API.
