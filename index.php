@@ -19,8 +19,8 @@
 // OAuth credential placeholders that must be filled in by users.
 // You can find them on
 // https://www.yelp.com/developers/v3/manage_app
-$CLIENT_ID = "mEbfEMyYnU1EgNm2o3TOiw";
-$CLIENT_SECRET = "ZIfhF7t2INthL9ut5BBvMWG4QgZeRNyWepOUDf96g9MXZzpZdfeUcSkBN5f4ZDn8";
+$CLIENT_ID = "02kOu2OwxMITPAa8zCcpew";
+$CLIENT_SECRET = "o3kj1PsldmHbv4533nqFgip3b1nL0ZcF11H8EexmFnrchwssjZExI2Fi5yzOHyok";
 
 // Complain if credentials haven't been filled out.
 assert($CLIENT_ID, "Please supply your client_id.");
