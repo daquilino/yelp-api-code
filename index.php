@@ -38,7 +38,7 @@ $GRANT_TYPE = "client_credentials";
 $DEFAULT_TERM = "dinner";
 $DEFAULT_LOCATION = "San Francisco, CA";
 $SEARCH_LIMIT = 50;
-$SEARCH_SORT_BY = "review_count";
+$SEARCH_SORTBY = "rating";
 
 /**
  * Given a bearer token, send a GET request to the API.
@@ -159,7 +159,7 @@ function search($bearer_token, $term, $location) {
     $url_params['term'] = $term;
     $url_params['location'] = $location;
     $url_params['limit'] = $GLOBALS['SEARCH_LIMIT'];
-    $url_params['sort_by'] = $GLOBALS['SEARCH_SORT_BY'];
+    $url_params['sort_by'] = $GLOBALS['SEARCH_SORTBY'];
     
     return request($bearer_token, $GLOBALS['API_HOST'], $GLOBALS['SEARCH_PATH'], $url_params);
 }
