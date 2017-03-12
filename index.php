@@ -39,7 +39,7 @@ $DEFAULT_TERM = "dinner";
 $DEFAULT_LOCATION = "San Francisco, CA";
 $SEARCH_LIMIT = 50;
 $SEARCH_SORTBY = "rating";
-$SEARCH_RADIUS = 8064;
+$DEFAULT_RADIUS = 8064;
 
 /**
  * Given a bearer token, send a GET request to the API.
@@ -219,14 +219,16 @@ function query_api($term, $location, $radius) {
 $longopts  = array(
     "term::",
     "location::",
+    "radius::",
 );
     
 //$options = getopt("", $longopts);
 
 $term = $_GET['term'] ?: $GLOBALS['DEFAULT_TERM'];
 $location = $_GET['location'] ?: $GLOBALS['DEFAULT_LOCATION'];
+$radius = $_GET['radius'] ?: $GLOBALS['DEFAULT_RADIUS'];
 //echo $_GET['term'] . "\n";
 //echo $_GET['location'] . "\n";
-query_api($term, $location);
+query_api($term, $location, $radius);
 
 ?>
