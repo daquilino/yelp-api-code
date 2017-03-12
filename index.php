@@ -37,8 +37,9 @@ $GRANT_TYPE = "client_credentials";
 // Defaults for our simple example.
 $DEFAULT_TERM = "dinner";
 $DEFAULT_LOCATION = "San Francisco, CA";
-$SEARCH_LIMIT = 51;
+$SEARCH_LIMIT = 50;
 $SEARCH_SORTBY = "rating";
+$SEARCH_RADIUS = 8064;
 
 /**
  * Given a bearer token, send a GET request to the API.
@@ -153,11 +154,12 @@ function request($bearer_token, $host, $path, $url_params = array()) {
  * @param    $location    The search location passed to the API 
  * @return   The JSON response from the request 
  */
-function search($bearer_token, $term, $location) {
+function search($bearer_token, $term, $location, $radius) {
     $url_params = array();
     
     $url_params['term'] = $term;
     $url_params['location'] = $location;
+    $url_params['radius'] = $radius;
     $url_params['limit'] = $GLOBALS['SEARCH_LIMIT'];
     $url_params['sort_by'] = $GLOBALS['SEARCH_SORTBY'];
     
@@ -183,10 +185,10 @@ function get_business($bearer_token, $business_id) {
  * @param    $term        The search term to query
  * @param    $location    The location of the business to query
  */
-function query_api($term, $location) {     
+function query_api($term, $location, $radius) {     
     $bearer_token = obtain_bearer_token();
 
-    $response = json_decode(search($bearer_token, $term, $location));
+    $response = json_decode(search($bearer_token, $term, $location, $radius));
     
 
     //CODE I ADDED 
